@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>Parsing the Websters Unabridged Dictionary</title>
+        <style>
+.word {
+    background-color: #FFCCCC;
+}
+
+.gap {
+    background-color: #FFFFCC;
+}
+
+.etymology {
+    background-color: #CCFFCC;            
+    display: inline-block;
+}
+
+.origin {
+    background-color: #CCFFFF;
+    display: inline-block;
+}
+
+.source {
+    background-color: #FFFFCC;
+    display: inline-block;
+}
+
+.definition {
+    background-color: #FF9999;
+    display: inline-block;
+}
+        </style>
+        
+    </head>
+    <body>
+        <!-- Add your site or application content here -->
+        <div id="main">
+        </div>
+        
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+        <script>
+$.ajax({
+    url: "data/test.json",
+    dataType: "json",
+    success: function (d) {
+        $('#main').html(d.text);    
+    }
+});
+        </script>
+    </body>
+</html>
